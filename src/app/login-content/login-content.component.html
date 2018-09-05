@@ -1,0 +1,12 @@
+<h1 mat-dialog-title style="text-align: center">Page Pairer</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.username" placeholder="User Name:">
+    </mat-form-field>
+    <mat-form-field>
+        <input type="password" matInput [(ngModel)]="data.password" placeholder="Password:">
+    </mat-form-field>
+</div>
+<mat-dialog-actions>
+    <button style="margin-left: auto; margin-right: auto" mat-raised-button color="primary" (click)="onNoClick()">Login</button>
+</mat-dialog-actions>

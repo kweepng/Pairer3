@@ -10,10 +10,13 @@
   },
   "files": [
     "test.ts",
-    "polyfills.ts"
+    "polyfills.ts",
+      "src/app/app.module.ts",
+      "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts",
+      "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts"
   ],
   "include": [
     "**/*.spec.ts",
-    "**/*.d.ts"
+    "**/*.d.ts",
   ]
 }

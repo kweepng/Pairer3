@@ -1,0 +1,56 @@
+<!--
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+-->
+<!--
+  <div class="container" fxLayout fxLayout.xs="column wrap" fxLayoutGap="5px">
+fxLayoutWrap
+   -->
+
+<div class="imageContent" mat-padding fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="5px" fxLayoutAlign="left">
+    <mat-card mat-whiteframe="8" *ngFor="let image of images">
+        <div class="header" fxLayout..gt-xs="row" fxLayoutGap="0.5%" fxLayoutAlign="center">
+            <button mat-icon-button fxFlex="24%" matTooltip="Preview">
+                <mat-icon class="icon">visibility</mat-icon>
+            </button>
+            <button mat-icon-button fxFlex="24%" matTooltip="download">
+                <mat-icon class="icon">cloud_dowwnload</mat-icon>
+            </button>
+            <button mat-icon-button fxFlex="24%" matTooltip="Upload">
+                <mat-icon class="icon">cloud_upload</mat-icon>
+            </button>
+            <button mat-icon-button fxFlex="24%" matTooltip="Delete">
+                <mat-icon class="icon">delete</mat-icon>
+            </button>
+        </div>
+        <div fxLayout.gt-xs="row" fxLayoutGap="0.5%" fxLayoutAlign="center">
+            <img mat-card-image [src]="image.thumbnailImage">
+        </div>
+        <div fxLayout.gt-xs="row" fxLayoutGap="0.5%" fxLayoutAlign="center">
+            {{image.label}}
+        </div>
+    </mat-card>
+</div>

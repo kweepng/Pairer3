@@ -1,0 +1,113 @@
+<!--
+<mat-sidenav-container class=" sidenav-container ">
+    <mat-sidenav mode="side " fixedInViewport="false" opened="true " class="sidenav ">
+        <mat-toolbar color="primary">Publication</mat-toolbar>
+        <app-jqtree>
+        </app-jqtree>
+    </mat-sidenav>
+
+
+     <mat-sidenav-content position="end" fixedInViewport="false"  style="height: 100%; margin-left: 200px ">
+            <mat-tab-group>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <em>Pagination</em>
+                    </ng-template>
+                    <app-pagination></app-pagination>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <em>Thumbnail</em>
+                    </ng-template>
+                    <app-thumbnail></app-thumbnail>
+                </mat-tab>
+            </mat-tab-group>
+     </mat-sidenav-content>
+</mat-sidenav-container>
+ -->
+
+
+
+<div class="content">
+    <div class="pubtree">
+        <!-- <mat-toolbar color="primary">Publication</mat-toolbar> -->
+        <mat-toolbar color="primary">
+            <mat-toolbar-row fxLayout.gt-xs="row" fxLayoutGap="5%" fxLayout.xs="column">
+                <button mat-icon-button (click)="openDialog()">
+                    <mat-icon fxFlex="20%">add_box</mat-icon>
+                </button>
+                <button mat-icon-button (click)="openDialog()">
+                <mat-icon fxFlex="20%">refresh</mat-icon>
+              </button>
+                <button mat-icon-button (click)="openDialog()">
+                <mat-icon fxFlex="20%">delete</mat-icon>
+              </button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <app-jqtree>
+        </app-jqtree>
+    </div>
+
+    <div class="tabarea">
+        <!--  <mat-sidenav-content position="end" fixedInViewport="false"  style="height: 100%; margin-left: 200px ">
+            <mat-tab-group dynamicHeight="false " [selectedIndex]="selectedIndex" (selectedTabChange)="onLinkClick($event)"> -->
+        <mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="onLinkClick($event)">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>Pagination</em>
+                </ng-template>
+                <app-pagination></app-pagination>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>Thumbnail</em>
+                </ng-template>
+                <app-thumbnail></app-thumbnail>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>Press Proof</em>
+                </ng-template>
+                <app-pressproof></app-pressproof>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>Tracker</em>
+                </ng-template>
+                <app-tracker></app-tracker>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>Tracker Log</em>
+                </ng-template>
+                <app-trackerlog></app-trackerlog>
+            </mat-tab>
+        </mat-tab-group>
+        <!--     </mat-sidenav-content> -->
+    </div>
+    <div>
+
+        <!--
+<mat-drawer-container>
+    <mat-drawer mode="side " class="sidenav " fixedInViewport="true" opened="true">
+        <app-jqtree>
+        </app-jqtree>
+    </mat-drawer>
+    <mat-drawer-content position="end " style="height: 100%; ">
+        <mat-tab-group dynamicHeight="false ">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>Pagination</em>
+                </ng-template>
+                <app-pagination></app-pagination>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <em>Thumbnail</em>
+                </ng-template>
+                <app-thumbnail></app-thumbnail>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-drawer-content>
+</mat-drawer-container>
+-->

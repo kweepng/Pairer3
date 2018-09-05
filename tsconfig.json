@@ -1,5 +1,14 @@
 {
   "compileOnSave": false,
+  "include": [
+    "src/**/*"
+  ],
+  "files": [
+    "src/app/app.module.ts",
+    "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts",
+    "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu.ts",
+    "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxtree.ts"
+  ],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

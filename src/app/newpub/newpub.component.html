@@ -1,0 +1,87 @@
+<h1 mat-dialog-title style="text-align: center">New Publication</h1>
+<div mat-dialog-content class="newpub-form">
+    <div fxLayout fxLayout.gt-xs="row" fxLayoutGap="25px" fxLayout.xs="column">
+        <div fxFlex="calc(50% - 25px)">
+            <mat-form-field>
+                <mat-select placeholder="Publication" (selectionChange)="pubSelectChange($event.value)" [(ngModel)]="pub" name="publication" required>
+                    <mat-option *ngFor="let pb of pubs" [value]="pb.Publication">
+                        {{pb.Publication}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex="calc(50% - 25px)">
+            <mat-form-field>
+                <input type="text" matInput [(ngModel)]="prod" disabled placeholder="Product">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div fxLayout fxLayout.gt-xs="row" fxLayoutGap="25px" fxLayout.xs="column">
+        <div fxFlex="calc(50% - 25px)">
+            <mat-form-field>
+                <mat-label>Publication size</mat-label>
+                <input matInput type="number" min="2" max="180" step="1" value="pubSize" placeholder="Publication size" required [(ngModel)]='psize' />
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="calc(50% - 25px)">
+            <mat-form-field>
+                <mat-select placeholder="Publication date" [(ngModel)]="pdate" required>
+                    <mat-option *ngFor="let dd of dates" [value]="dd.date">
+                        {{dd.date}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div fxLayout.gt-xs="row" fxLayoutGap="25px" fxLayout.xs="column">
+        <div fxFlex="calc(50% - 25px)">
+            <mat-form-field>
+                <mat-select (selectionChange)="edtSelectChange($event.value)" [(ngModel)]="edt" required placeholder="Edition">
+                    <mat-option *ngFor="let ed of edts" [value]="ed.Edition">
+                        {{ed.Edition}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex="calc(50% - 25px)">
+            <mat-form-field>
+                <input type="text" matInput [(ngModel)]="sect" disabled placeholder="Section">
+            </mat-form-field>
+        </div>
+    </div>
+
+
+    <div fxLayout.gt-xs="row" fxLayoutGap="25px" fxLayout.xs="column">
+
+        <div fxFlex="calc(50% - 25px)">
+            <mat-form-field>
+                <mat-select placeholder="Destination" required [(ngModel)]="dest">
+                    <mat-option *ngFor="let dst of dests" [value]="dst.DestGroup">
+                        {{dst.DestGroup}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="calc(50% - 25px)">
+            <mat-form-field>
+                <mat-select placeholder="Colour:" required [(ngModel)]="colour">
+                    <mat-option *ngFor="let clr of colours" [value]="clr.colour">
+                        {{clr.colour}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div>
+        <mat-checkbox class="checkbox-margin" [(ngModel)]="hold">Hold</mat-checkbox>
+    </div>
+</div>
+<mat-dialog-actions>
+    <button style="margin-left: auto; margin-right: auto" mat-raised-button color="primary" (click)="onClose()">Cancel</button>
+    <button style="margin-left: auto; margin-right: auto" [disabled]="createBtn" mat-raised-button color="primary" (click)="onCreate()">Create</button>
+</mat-dialog-actions>

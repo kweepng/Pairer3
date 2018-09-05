@@ -1,0 +1,28 @@
+<div class="imageContent">
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="5px" fxLayoutAlign="left">
+        <mat-card *ngFor="let image of images">
+
+            <div class="header" fxLayout.gt-xs="row" fxLayoutGap="0.5%" fxLayoutAlign="center">
+                <button mat-icon-button fxFlex="24%" matTooltip="Preview">
+                <mat-icon class="icon">visibility</mat-icon>
+            </button>
+                <button mat-icon-button fxFlex="24%" matTooltip="download">
+                <mat-icon class="icon">cloud_dowwnload</mat-icon>
+            </button>
+                <button mat-icon-button fxFlex="24%" matTooltip="Upload">
+                <mat-icon class="icon">cloud_upload</mat-icon>
+            </button>
+                <button mat-icon-button fxFlex="24%" matTooltip="Delete">
+                <mat-icon class="icon">delete</mat-icon>
+            </button>
+            </div>
+
+            <div fxLayout.gt-xs="row" fxLayoutGap="0.5%" fxLayoutAlign="center">
+                <img mat-card-image [src]="image.thumbnailImage">
+            </div>
+            <mat-card-subtitle fxLayout.gt-xs="row" fxLayoutGap="0.5%" fxLayoutAlign="center">
+                {{image.label}}
+            </mat-card-subtitle>
+        </mat-card>
+    </div>
+</div>
